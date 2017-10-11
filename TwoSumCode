@@ -1,0 +1,38 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+ 
+int* twoSum(int* nums, int numsSize, int target) {
+    if (nums != 0)
+    {
+      if (target != 0 && isdigit(target))
+        {
+            
+            int i , j;
+            int difference=0;
+            
+            for (i=0; i< numsSize; i++)
+            {
+                difference = target - nums[i];
+                
+                for (j=0 ; j<numsSize; j++)
+                {
+                    if(difference != nums[i] && difference == nums[j]) 
+                    {
+                        int *indices = (int *) calloc(2, sizeof(int));
+                        indices [0] = i;
+                        indices [1] = j;
+                        
+                        return indices; 
+                    }
+                    
+                }
+                
+               exit (-1);             
+            }
+         } else  exit (-1);   
+        
+    }else  exit (-1); 
+                
+}
+
